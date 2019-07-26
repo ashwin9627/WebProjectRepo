@@ -1,0 +1,29 @@
+﻿@model WebProject.Models.DateModel
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(model=>model.dataofbirth,new { htmlAttributes=new {@class="DateModel"}})
+}
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+@section scripts{
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js">  </script>
+    <script>
+        $(function () {
+            $(".DateModel").datepicker({
+                dateFormat: "yy-mm-dd",
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "2010:2020",
+                minDate: new Date(2017, 0, 1),
+                maxDate: new Date(2019, 0, 5),
+                showOn: "both",
+                buttonText:"<i class='fa fa-calendar'></i>"
+            });
+        });
+        </script>  
+    }

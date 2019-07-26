@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FirstDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="EntityTable1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+    <Property Name="Gender" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginTable1">
+    <Key>
+      <PropertyRef Name="custId" />
+    </Key>
+    <Property Name="custId" Type="int" Nullable="false" />
+    <Property Name="Age" Type="int" />
+    <Property Name="City" Type="varchar" MaxLength="255" />
+    <Property Name="Country" Type="varchar" MaxLength="255" />
+    <Property Name="custName" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Table3">
+    <Key>
+      <PropertyRef Name="Register_no" />
+    </Key>
+    <Property Name="Register_no" Type="int" Nullable="false" />
+    <Property Name="custname" Type="varchar" MaxLength="244" />
+    <Property Name="Phone_no" Type="int" />
+  </EntityType>
+  <EntityContainer Name="FirstDBModelStoreContainer">
+    <EntitySet Name="EntityTable1" EntityType="Self.EntityTable1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoginTable1" EntityType="Self.LoginTable1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Table3" EntityType="Self.Table3" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
